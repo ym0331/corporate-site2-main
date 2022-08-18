@@ -1,5 +1,4 @@
 <template>
-  <v-container>
     <v-row class="rowarea">
       <v-col cols="12"  sm="6" md="6" lg="6" xl="6">
         <v-img src="@/../public/img/businessindex.jpg"></v-img>
@@ -10,7 +9,6 @@
         <button>詳しく見る</button>
       </v-col>
     </v-row>
-  </v-container>
 </template>
 
 <script>
@@ -44,10 +42,6 @@ button {
 button:hover {
   box-shadow: none;
   transform: translate3d(0, 5px, 0);
-}
-
-.rowarea {
-  align-items: center;
 }
 
 .textarea {

@@ -30,3 +30,21 @@ export default {
   // }
 };
 </script>
+
+<style>
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+}
+
+.is-big {
+  margin-right: 10px;
+}
+
+.is-small {
+  font-size: 0.6em;
+  color: #002565;
+}
+</style>

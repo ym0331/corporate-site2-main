@@ -4,7 +4,7 @@
       <!-- タブレット以上の表示 -->
       <div class="d-none d-sm-flex">
         <v-toolbar-title class="title">
-          <img src="./img/logo.png" alt="ヨシザワ建設株式会社のロゴ" class="logo" />
+          <a href="/"><img src="./img/logo.png" alt="ヨシザワ建設株式会社のロゴ" class="logo" /></a>
         </v-toolbar-title>
         <v-tab v-for="item in items" :key="item" :href="item.path">{{ item.title }}</v-tab>
         <v-btn depressed rounded class="contactbtn" color="white" href="/contact">お問い合せ</v-btn>

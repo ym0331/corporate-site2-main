@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+<v-row>
+  <v-col>
     <transition-group tag="ul" name="list" class="newsList">
       <li v-for="post in posts.slice(0,3)" :key="post" class="newsListLink">
         <a :href="post.link">
@@ -8,7 +9,8 @@
         </a>
       </li>
     </transition-group>
-  </div>
+    </v-col>
+    </v-row>
 </template>
 
 <script>
@@ -27,14 +29,13 @@ export default {
         this.posts = response.data;
       }),
       (this.moment = moment);
-      console.log(this.posts);
   }
 };
 </script>
 
 <style scoped>
 .newsList {
-  width: 80%;
+  width: 100%;
   margin: 0 auto 40px;
   list-style-type: none;
   align-items: center;
