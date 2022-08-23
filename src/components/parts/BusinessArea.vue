@@ -1,5 +1,5 @@
 <template>
-    <v-row class="rowarea">
+    <v-row>
       <v-col cols="12"  sm="6" md="6" lg="6" xl="6">
         <v-img src="@/../public/img/businessindex.jpg"></v-img>
       </v-col>
@@ -18,7 +18,6 @@ export default {
 </script>
 
 <style scoped>
-
 button {
   font-size: 1.25rem;
   font-weight: 600;

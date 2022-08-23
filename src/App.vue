@@ -19,7 +19,7 @@ export default {
   components: {
     HedderMenu,
     FotterMenu
-}
+  }
   //   data: () => ({
   //     isActive: true
   //   }),
@@ -39,12 +39,44 @@ h2 {
   align-items: baseline;
 }
 
-.is-big {
+h2 .is-big {
   margin-right: 10px;
 }
 
-.is-small {
+h2 .is-small {
   font-size: 0.6em;
   color: #002565;
+}
+
+
+
+.text {
+  margin: 10px;
+  text-align: justify;
+}
+
+button {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+  display: inline-block;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  letter-spacing: 0.1em;
+  border-radius: 0.5rem;
+  border-radius: 10px;
+  background-color: #143265;
+  color: #fff;
+  box-shadow: 0 5px 0 rgba(161, 158, 139, 0.3);
+  transition: 0.3s;
+  box-sizing: border-box;
+  border: none;
+}
+
+button:hover {
+  box-shadow: none;
+  transform: translate3d(0, 5px, 0);
 }
 </style>

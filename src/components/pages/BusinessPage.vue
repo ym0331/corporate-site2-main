@@ -1,41 +1,60 @@
 <template>
-  <div>
-    <!-- <CarouselView /> -->
-    <!-- <v-img src="/img/piano.jpg"></v-img> -->
-    <transition-group tag="ul" name="list">
-      <li v-for="content in contents" :key="content" :id="content">
-        <!-- <div v-motion-pop-visible> -->
-        <div>
-          <h2><p class="is-big">{{ content.name }}</p><p class="is-small">{{ content.name2 }}</p></h2>
-          <component :is="content.name"></component>
-        </div>
-      </li>
-    </transition-group>
-  </div>
+  <v-container>
+    <h2>
+      <p class="is-big">Business</p>
+      <p class="is-small">事業内容</p>
+    </h2>
+
+    <v-row class="businessarea">
+      <v-col cols="12" sm="6" md="6" lg="6" xl="6">
+        <v-img src="@/../public/img/business1.jpg"></v-img>
+      </v-col>
+      <v-col cols="12" sm="6" md="6" lg="6" xl="6" class="textarea">
+        <h3>
+          <p>Architecture</p>
+          <p class="is-small">建築</p>
+        </h3>
+        <p class="text">分譲住宅を建設する事業を行っています。</p>
+        <router-link to="/works">
+          <button>施工事例</button>
+        </router-link>
+      </v-col>
+    </v-row>
+
+    <v-row class="businessarea">
+      <v-col cols="12" sm="6" md="6" lg="6" xl="6" class="textarea">
+        <h3>
+          <p>Renovation</p>
+          <p class="is-small">リフォーム</p>
+        </h3>
+        <p class="text">住宅のリフォームを行っています。</p>
+        <router-link to="/works">
+          <button>施工事例</button>
+        </router-link>
+      </v-col>
+      <v-col cols="12" sm="6" md="6" lg="6" xl="6">
+        <v-img src="@/../public/img/business2.jpg"></v-img>
+      </v-col>
+    </v-row>
+
+    <!-- 画像エリア -->
+  </v-container>
 </template>
 
 <script>
 // import CarouselView from "@/components/parts/CarouselView.vue";
 
-import Access from "@/components/parts/AcessArea.vue";
-import News from "@/components/parts/NewsArea.vue";
-import business from "@/components/parts/BusinessArea.vue";
 export default {
   name: "MainContents",
-  components: {
-    Access,
-    // CarouselView,
-    News,
-    business
-  },
+  components: {},
   data() {
     return {
       visible: false,
       contents: [
-        {name:"News", name2:"新着情報"},
-        {name:"business", name2:"事業内容"},
-        {name:"Access", name2:"アクセス"},
-        {name:"Works", name2:"施工事例"},
+        { name: "News", name2: "新着情報" },
+        { name: "business", name2: "事業内容" },
+        { name: "Access", name2: "アクセス" },
+        { name: "Works", name2: "施工事例" }
       ]
     };
   }
@@ -44,19 +63,55 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-h2 {
-  font-size: 1.6rem;
+button {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+  display: inline-block;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  letter-spacing: 0.1em;
+  border-radius: 0.5rem;
+  border-radius: 10px;
+  background-color: #143265;
+  color: #fff;
+  box-shadow: 0 5px 0 rgba(161, 158, 139, 0.3);
+  transition: 0.3s;
+  box-sizing: border-box;
+  border: none;
+}
+
+button:hover {
+  box-shadow: none;
+  transform: translate3d(0, 5px, 0);
+}
+
+.businessarea {
+  margin-bottom: 30px;
+}
+
+.textarea {
+  position: relative;
+  margin: auto;
+  padding: 0 10% 0;
+  text-align: center;
+}
+
+h3 {
   margin-bottom: 10px;
-  display: flex;
-  align-items: baseline;
+  font-size: 1.75em;
 }
 
-.is-big {
-  margin-right: 10px;
-}
-
-.is-small {
+h3 .is-small {
   font-size: 0.6em;
   color: #002565;
+}
+
+.text {
+  text-align: justify;
+  margin: 0 0 20px 0;
+  display: inline-block;
 }
 </style>

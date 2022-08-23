@@ -1,10 +1,7 @@
 <template>
   <div>
-    <!-- <CarouselView /> -->
-    <!-- <v-img src="/img/piano.jpg"></v-img> -->
     <transition-group tag="ul" name="list">
       <v-container v-for="content in contents" :key="content" :id="content">
-        <!-- <div v-motion-pop-visible> -->
         <h2>
           <p class="is-big">{{ content.name }}</p>
           <p class="is-small">{{ content.name2 }}</p>
@@ -22,7 +19,6 @@ import works from "@/components/parts/WorkArea.vue";
 export default {
   name: "MainContents",
   components: {
-    // CarouselView,
     News,
     business,
     works
