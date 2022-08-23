@@ -20,7 +20,7 @@ const routes = [
   {
     path: '/company',
     name: 'company',
-    component: () => import(/* webpackChunkName: "contactArea" */ '../components/pages/ConpanyPage.vue')
+    component: () => import(/* webpackChunkName: "contactArea" */ '../components/pages/CompanyPage.vue')
   },
   {
     path: '/contact',
