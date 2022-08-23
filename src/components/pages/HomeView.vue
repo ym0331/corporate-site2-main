@@ -1,23 +1,25 @@
 <template>
-  <div class="home">
-    <!-- <HedderMenu /> -->
-    <!-- <router-link to="/contactArea">contactArea</router-link> -->
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <ContentsArea />
-  </div>
+    <ContentsArea :contents="contents"></ContentsArea>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HedderMenu from '@/components/templates/HedderMenu.vue'
 import ContentsArea from "@/components/templates/ContentsArea.vue";
 
 export default {
   name: "HomeView",
   components: {
-    // HedderMenu,
     ContentsArea,
   },
+  data() {
+    return {
+      visible: false,
+      contents: [
+        { name: "News", name2: "新着情報"},
+        { name: "Business", name2: "事業内容" },
+        { name: "Works", name2: "施工事例" }
+      ]
+    };
+  }
 };
 </script>
 
