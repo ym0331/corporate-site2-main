@@ -15,7 +15,7 @@ const routes = [
   {
     path: '/works',
     name: 'works',
-    component: () => import(/* webpackChunkName: "contactArea" */ '../components/pages/WorkPage.vue')
+    component: () => import(/* webpackChunkName: "contactArea" */ '../components/pages/WorksPage.vue')
   },
   {
     path: '/company',
@@ -25,7 +25,12 @@ const routes = [
   {
     path: '/contact',
     name: 'contact',
-    component: () => import(/* webpackChunkName: "contactArea" */ '../components/pages/contactPage.vue')
+    component: () => import(/* webpackChunkName: "contactArea" */ '../components/pages/ContactPage.vue')
+  },
+  {
+    path: '/workdetail',
+    name: 'workdetail',
+    component: () => import(/* webpackChunkName: "contactArea" */ '../components/pages/WorkDetailPage.vue')
   },
 ]
 

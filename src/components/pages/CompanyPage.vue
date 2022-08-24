@@ -14,9 +14,9 @@ export default {
     return {
       visible: false,
       contents: [
-        { name: "President", name2: "社長紹介"},
-        { name: "CompanyInfo", name2: "会社概要" },
-        { name: "Access", name2: "アクセス" }
+        { name: "President", name2: "社長紹介", components:"President"},
+        { name: "CompanyInfo", name2: "会社概要", components:"CompanyInfo" },
+        { name: "Access", name2: "アクセス", components:"Access" }
       ]
     };
   }

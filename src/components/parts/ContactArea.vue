@@ -1,159 +1,131 @@
 <template>
-        まずは無料体験レッスン
+  <div>
+    <div class="contact_text_area">
+      <p>
+        お問い合わせありがとうございます。
+        <br />当社について、疑問やご質問がある方は、ご遠慮なくお問い合わせください。
+        <br />以下の個人情報ついてに同意及び必要事項をご入力の上、「送信」ボタンを押してください。
+      </p>
+    </div>
+    <form action="sample.cgi" method="post">
+      <dl>
+        <dt>
+          <label for="name">
+            お名前
+            <span class="required">必須</span>
+          </label>
+        </dt>
+        <dd>
+          <input type="text" id="name" v-model="contactData.name" />
+        </dd>
+        <dt>
+          <label for="email">
+            メールアドレス
+            <span class="required">必須</span>
+          </label>
+        </dt>
+        <dd>
+          <input type="email" id="email" v-model="contactData.email" />
+        </dd>
+
+        <dt>
+          <label for="message">お問合せ内容</label>
+        </dt>
+        <dd>
+          <textarea
+            name="message"
+            cols="50"
+            rows="5"
+            id="message"
+            placeholder="ご質問・ご連絡事項などありましたらこちらに入力してください"
+          ></textarea>
+        </dd>
+
+        <dt>個人情報の取り扱いについて</dt>
+        <dd class="consent_form">
+          <strong>個人情報の取り扱いについて</strong>
+          <div>
+            <p>ヨシザワ建設株式会社は、個人情報の保護に関する法令等を遵守するとともに、社会的責務であると考え、以下にプライバシーポリシーを定め、全ての役員、社員、協働者に周知し、徹底を図ることにより、個人情報の適正な取り扱いに努めてまいります。</p>
+          </div>
+        </dd>
+      </dl>
+
+      <p class="consent_chk">
+        <input type="checkbox" id="consent" v-model="contactData.consent" />
+        <label for="consent">「個人情報の取り扱いについて」同意する</label>
+      </p>
+      <v-container class="contact_btn_area">
+        <v-row justify="center">
+          <v-col xs="12">
+            <input type="submit" class="submit contact_btn" />
+          </v-col>
+          <v-col xs="12">
+            <input type="reset" class="reset contact_btn" />
+          </v-col>
+        </v-row>
+      </v-container>
+    </form>
+  </div>
 </template>
 
 <script>
-// import CarouselView from "./CarouselView.vue";
-// import AcessArea from './AcessArea.vue'
 export default {
-  name: "MainContents",
-  props: {
-    msg: String,
-  },
-  // components: {
-  //   CarouselView,
-  //   AcessArea,
-  // },
-  // data() {
-  //   return {
-  //     schedules: [
-  //       { day: "月", morning: "〇", after: "〇" },
-  //       { day: "火", morning: "〇", after: "〇" },
-  //       { day: "水", morning: "", after: "" },
-  //       { day: "木", morning: "〇", after: "〇" },
-  //       { day: "金", morning: "〇", after: "〇" },
-  //       { day: "土", morning: "〇", after: "〇" },
-  //       { day: "日/祝", morning: "", after: "" },
-  //     ],
-  //   };
-  // },
+  name: "ContactPage",
+  data() {
+    return {
+      contactData: {
+        name: "",
+        sex: "女",
+        age: "",
+        guardian: "",
+        email: "",
+        date: "",
+        consent: false
+      }
+    };
+  }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-img {
-  height: auto;
-}
-
-.contentsArea {
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 30px;
-}
-
-a {
-  color: #643e2f;
-  text-decoration: none;
-  display: flex;
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
 h2 {
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 10px;
   color: #ffffff;
   display: inline-block;
-  text-shadow: 1px 1px 1px #f2602d, -1px 1px 1px #f2602d, 1px -1px 1px #f2602d,
-    -1px -1px 1px #f2602d, 1px 0px 1px #f2602d, 0px 1px 1px #f2602d,
-    -1px 0px 1px #f2602d, 0px -1px 1px #f2602d;
+  text-shadow: 1px 1px 1px #002565, -1px 1px 1px #002565, 1px -1px 1px #002565,
+    -1px -1px 1px #002565, 1px 0px 1px #002565, 0px 1px 1px #002565,
+    -1px 0px 1px #002565, 0px -1px 1px #002565;
 }
 
-h3 {
-  color: #f2602d;
+.contact_text_area {
+  margin: 20px 0;
 }
 
-.headerImg img {
-  width: 8vw;
-  margin-bottom: 30px;
+dt {
+  font-size: 1.25rem;
 }
 
-/* schoolArea */
-.schoolAbout {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.required {
+  color: white;
+  background-color: #002565;
+  border-radius: 10px;
+  font-weight: normal;
+  font-size: 0.9rem;
+  margin-left: 10px;
+  padding: 0 7px 1px;
+  white-space: nowrap;
 }
 
-.schoolAbout_item {
-  width: calc(100% / 3);
-  box-sizing: border-box;
+dd {
+  margin-bottom: 15px;
 }
 
-/* teacherArea */
-.teacherArea img {
-  border-radius: 6px;
-}
-
-.teacherImg {
-  position: relative;
-}
-
-.teacherBox {
-  display: table;
-  width: 28vw;
-  height: 15vw;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.98);
-  border-radius: 6px;
-  position: absolute;
-  right: 2.8vw;
-  top: 2.8vw;
-}
-
-.teacherBox div {
-  display: table-cell;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.teacherTxt dt {
-  font-weight: 600;
-  font-size: 1.12em;
-}
-
-.teacherTxt dd {
-  font-size: 1.12em;
-}
-
-/* newsListArea */
-.newsList {
-  width: 80%;
-  margin: 0 auto 40px;
-  list-style-type: none;
-  align-items: center;
-  border-top: 1px solid #fcca0d;
-}
-.newsListLink {
-  flex-wrap: wrap;
-  padding: 25px 0;
-  border-bottom: 1px solid #fcca0d;
-  box-sizing: border-box;
-  line-height: 1.5rem;
-}
-.newsList .date {
-  margin-right: 2rem;
-  font-size: 16px;
-  color: #643e2f;
-}
-.newsList .category {
-  background: #ea5413;
-  color: #fff;
-  display: inline-block;
-  font-size: 0.8rem;
-  width: 5rem;
-  color: #fff;
-  text-align: center;
-  margin-right: 2rem;
-}
-
-/* テキストボックス */
-input,
-textarea,
-select {
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="number"],
+textarea {
   width: 100%;
   border: 1px solid #d7d7d7;
   border-radius: 4px;
@@ -162,20 +134,25 @@ select {
   font-size: 1.12em;
 }
 
-textarea {
-  font-family: inherit;
+input:focus,
+textarea:focus {
+  border-color: #002565;
+  outline: 0;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: #29b6ca;
-  outline: 0;
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+label {
+  margin-right: 30px;
+  font-size: 1.12em;
 }
 
 input[type="checkbox"] {
   width: auto;
 }
+
 .consent_form_area {
   margin-bottom: 30px;
 }
@@ -197,6 +174,10 @@ input[type="checkbox"] {
 }
 
 /* 同意・リセットボタン */
+.v-col {
+  flex-grow: 0;
+}
+
 .contact_btn_area {
   text-align: center;
 }
@@ -217,13 +198,13 @@ input[type="checkbox"] {
 
 /* 送信ボタン */
 .submit {
-  background-color: #29b6ca;
+  background-color: #002565;
   color: #fff;
-  border: 1px solid #29b6ca;
+  border: 1px solid #002565;
 }
 .submit:hover {
   background-color: #fff;
-  color: #29b6ca;
+  color: #002565;
 }
 
 /* リセットボタン */
@@ -235,12 +216,4 @@ input[type="checkbox"] {
 .reset:hover {
   background-color: #efefef;
 }
-
-/* contactArea */
-/* .contactArea {
-  width: 100%;
-  padding: 50px 0;
-  box-sizing: border-box;
-  margin-bottom: 70px;
-} */
 </style>

@@ -6,7 +6,7 @@
 import ContentsArea from "@/components/templates/ContentsArea.vue";
 
 export default {
-  name: "CompanyPage",
+  name: "WorksPage",
   components: {
     ContentsArea,
   },
@@ -14,7 +14,7 @@ export default {
     return {
       visible: false,
       contents: [
-        { name: "Contact", name2: "お申し込み", components:"Contact"},
+        { name: "Works", name2: "施工事例", components:"WorksPage"}
       ]
     };
   }

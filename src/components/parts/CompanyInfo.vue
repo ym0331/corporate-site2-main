@@ -1,15 +1,10 @@
 <template>
-    <v-container>
-      <v-row
-        v-for="content in contents"
-        :key="content"
-        :id="content"
-        class="companyinfodetail"
-      >
-        <v-col cols="12" sm="2" md="2" lg="2" xl="2" class="definition">{{ content.definition }}</v-col>
-        <v-col cols="12" sm="10" md="10" lg="10" xl="10">{{ content.explanation }}</v-col>
-      </v-row>
-  </v-container>
+  <div class="companyInfo">
+    <v-row v-for="content in contents" :key="content" :id="content" class="companyinfodetail">
+      <v-col cols="12" sm="2" md="2" lg="2" xl="2" class="definition">{{ content.definition }}</v-col>
+      <v-col cols="12" sm="10" md="10" lg="10" xl="10">{{ content.explanation }}</v-col>
+    </v-row>
+  </div>
 </template>
 
 <script>
@@ -30,42 +25,26 @@ export default {
         { definition: "事業内容", explanation: "分譲住宅建設・リフォーム" },
         { definition: "資本金", explanation: "８０００万円" }
       ]
-    }
+    };
   }
 };
 </script>
 
 <style scoped>
-.newsList {
-  width: 100%;
-  margin: 0 auto 40px;
-  list-style-type: none;
-  align-items: center;
+.companyInfo {
   border-top: 1px solid #b9b9b9;
-}
-.newsListLink {
-  flex-wrap: wrap;
-  padding: 25px 0;
-  border-bottom: 1px solid #b9b9b9;
-  box-sizing: border-box;
-  line-height: 1.5rem;
-   text-align: justify;
+  align-items: center;
 }
 
-.date {
-  margin-right: 2rem;
+.companyinfodetail {
+  padding: 20px 0;
+  border-bottom: 1px solid #b9b9b9;
+  box-sizing: border-box;
+  text-align: justify;
+}
+
+.definition {
   font-weight: 600;
   color: #002565;
 }
-
-a {
-  color: #2c3e50;
-  text-decoration: none;
-  display: flex;
-}
-
-a:hover {
-  color: #b9b9b9;
-}
-
 </style>

@@ -48,11 +48,9 @@ h2 .is-small {
   color: #002565;
 }
 
-
-
-.text {
-  margin: 10px;
-  text-align: justify;
+h3 {
+  font-size: 1.75em;
+  margin-bottom: 20px;
 }
 
 button {
@@ -78,5 +76,9 @@ button {
 button:hover {
   box-shadow: none;
   transform: translate3d(0, 5px, 0);
+}
+
+.v-row {
+  margin: 0;
 }
 </style>

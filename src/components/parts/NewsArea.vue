@@ -1,16 +1,12 @@
 <template>
-<v-row>
-  <v-col>
-    <transition-group tag="ul" name="list" class="newsList">
-      <li v-for="post in posts.slice(0,3)" :key="post" class="newsListLink">
+  <div class="newsList">
+  <div name="list" v-for="post in posts.slice(0,3)" :key="post" class="newsListLink">
         <a :href="post.link">
           <span class="date">{{ moment(post.date).format("YYYY/MM/DD") }}</span>
           <p>{{ post.title.rendered }}</p>
         </a>
-      </li>
-    </transition-group>
-    </v-col>
-    </v-row>
+    </div>
+    </div>
 </template>
 
 <script>
@@ -35,19 +31,14 @@ export default {
 
 <style scoped>
 .newsList {
-  width: 100%;
-  margin: 0 auto 40px;
-  list-style-type: none;
-  align-items: center;
   border-top: 1px solid #b9b9b9;
+    align-items: center;
 }
 .newsListLink {
-  flex-wrap: wrap;
-  padding: 25px 0;
+  padding: 20px 0;
   border-bottom: 1px solid #b9b9b9;
   box-sizing: border-box;
-  line-height: 1.5rem;
-   text-align: justify;
+  text-align: justify;
 }
 
 .date {

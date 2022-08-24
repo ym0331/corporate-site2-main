@@ -7,7 +7,9 @@
 
     <v-row class="businessarea">
       <v-col cols="12" sm="6" md="6" lg="6" xl="6">
+        <div v-motion-slide-left>
         <v-img src="@/../public/img/business1.jpg"></v-img>
+        </div>
       </v-col>
       <v-col cols="12" sm="6" md="6" lg="6" xl="6" class="textarea">
         <h3>
@@ -33,7 +35,16 @@
         </router-link>
       </v-col>
       <v-col cols="12" sm="6" md="6" lg="6" xl="6">
+                 <div
+    v-motion
+    :initial="{ opacity: 0, y: 100 }"
+    :enter="{ opacity: 1, y: 0, scale: 1 }"
+    :variants="{ custom: { scale: 2 } }"
+    :hovered="{ scale: 1.2 }"
+    :delay="200"
+  >
         <v-img src="@/../public/img/business2.jpg"></v-img>
+                </div>
       </v-col>
     </v-row>
 
@@ -45,16 +56,13 @@
 // import CarouselView from "@/components/parts/CarouselView.vue";
 
 export default {
-  name: "MainContents",
+  name: "BusinessPage",
   components: {},
   data() {
     return {
       visible: false,
       contents: [
-        { name: "News", name2: "新着情報" },
-        { name: "business", name2: "事業内容" },
-        { name: "Access", name2: "アクセス" },
-        { name: "Works", name2: "施工事例" }
+        { name: "Business", name2: "事業内容", components:"BusinessPage" },
       ]
     };
   }

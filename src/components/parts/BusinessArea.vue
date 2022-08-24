@@ -1,14 +1,19 @@
 <template>
-    <v-row>
-      <v-col cols="12"  sm="6" md="6" lg="6" xl="6">
-        <v-img src="@/../public/img/businessindex.jpg"></v-img>
-      </v-col>
-      <v-col cols="12"  sm="6" md="6" lg="6" xl="6" class="textarea">
-        <h3>安心して暮らせる<br>お家をつくりたい</h3>
-        <p class="text">どこまでも一途にお客様のニーズに応え、暮らしに寄り添ったサービスを提供することを約束いたします。</p>
+  <v-row>
+    <v-col cols="12" sm="6" md="6" lg="6" xl="6">
+      <v-img src="@/../public/img/businessindex.jpg"></v-img>
+    </v-col>
+    <v-col cols="12" sm="6" md="6" lg="6" xl="6" class="textarea">
+      <h3>
+        安心して暮らせる
+        <br />お家をつくりたい
+      </h3>
+      <p class="businsesstxt">どこまでも一途にお客様のニーズに応え、暮らしに寄り添ったサービスを提供することを約束いたします。</p>
+      <router-link to="/works">
         <button>詳しく見る</button>
-      </v-col>
-    </v-row>
+      </router-link>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
@@ -47,15 +52,11 @@ button:hover {
   position: relative;
   margin: auto;
   padding: 0 10% 0;
+  text-align: center;
 }
 
-h3 {
-  margin: 10px;
-  font-size: 1.75em;
-}
-
-.text {
-  margin: 20px;
+.businsesstxt {
   text-align: justify;
+  margin-bottom: 20px;
 }
 </style>
