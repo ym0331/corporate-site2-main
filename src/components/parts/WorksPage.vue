@@ -6,7 +6,7 @@
           class="featuredmedia"
           :src="post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url"
           v-motion-fade-visible-once
-          :delay="500"
+          :delay="200"
         />
         <p class="postlink">
           <span class="date">{{ moment(post.date).format("YYYY/MM/DD") }}</span>

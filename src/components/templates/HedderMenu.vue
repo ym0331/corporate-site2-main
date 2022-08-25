@@ -13,7 +13,6 @@
       <!-- スマホの表示 -->
       <div class="d-flex d-sm-none xmheader">
         <v-app-bar-nav-icon v-on:click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-toolbar-title>吉澤ピアノ教室</v-toolbar-title>
       </div>
     </v-app-bar>
 

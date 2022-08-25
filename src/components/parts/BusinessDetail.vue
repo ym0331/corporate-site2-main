@@ -1,38 +1,45 @@
 <template>
-    <v-row class="businessarea">
-      <v-col cols="12" sm="6" md="6" lg="6" xl="6">
-        <v-img src="@/../public/img/business1.jpg"></v-img>
-      </v-col>
-      <v-col cols="12" sm="6" md="6" lg="6" xl="6" class="textarea">
-        <h3>
-          <p>Architecture</p>
-          <p class="is-small">建築</p>
-        </h3>
-        <p class="text">分譲住宅を建設する事業を行っています。</p>
-        <router-link to="/works">
-          <button>施工事例</button>
-        </router-link>
-      </v-col>
+<div>
+  <v-row class="businessarea">
+    <v-col cols="12" sm="6" md="6" lg="6" xl="6">
+      <v-img src="@/../public/img/business1.jpg"></v-img>
+    </v-col>
+    <v-col cols="12" sm="6" md="6" lg="6" xl="6" class="textarea">
+      <h3>
+        <p>Architecture</p>
+        <p class="is-small">建築</p>
+      </h3>
+      <p class="text">分譲住宅を建設する事業を行っています。</p>
+      <router-link to="/works">
+        <button>施工事例</button>
+      </router-link>
+    </v-col>
 
-      <v-col cols="12" sm="6" md="6" lg="6" xl="6" class="textarea">
-        <h3>
-          <p>Renovation</p>
-          <p class="is-small">リフォーム</p>
-        </h3>
-        <p class="text">住宅のリフォームを行っています。</p>
-        <router-link to="/works">
-          <button>施工事例</button>
-        </router-link>
-      </v-col>
-      <v-col cols="12" sm="6" md="6" lg="6" xl="6">
-        <v-img src="@/../public/img/business2.jpg"></v-img>
-      </v-col>
-    </v-row>
+    <v-col cols="12" sm="6" md="6" lg="6" xl="6" class="textarea">
+      <h3>
+        <p>Renovation</p>
+        <p class="is-small">リフォーム</p>
+      </h3>
+      <p class="text">住宅のリフォームを行っています。</p>
+      <router-link to="/works">
+        <button>施工事例</button>
+      </router-link>
+    </v-col>
+    <v-col cols="12" sm="6" md="6" lg="6" xl="6">
+      <v-img src="@/../public/img/business2.jpg"></v-img>
+    </v-col>
+  </v-row>
+        <SlideArea></SlideArea> 
+</div>
 </template>
 
 <script>
+import SlideArea from "@/components/parts/SlideArea.vue";
 export default {
-  name: "BusinessDetail"
+  name: "BusinessDetail",
+  components: {
+    SlideArea
+  }
 };
 </script>
 
