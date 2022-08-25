@@ -1,11 +1,11 @@
 <template>
-  <div tag="ul" name="list">
-    <v-container v-for="content in contents" :key="content" :id="content">
-      <h2>
+  <div class>
+    <v-container v-for="content in contents" :key="content" :id="content" class="contentsarea">
+      <h2 v-motion-fade-visible-once :delay="500">
         <p class="is-big">{{ content.name2 }}</p>
         <p class="is-small">{{ content.name }}</p>
       </h2>
-      <component :is="content.components"></component>
+      <component :is="content.components"  v-motion-fade-visible-once :delay="500"></component>
     </v-container>
   </div>
 </template>
@@ -19,6 +19,7 @@ import CompanyInfo from "@/components/parts/CompanyInfo.vue";
 import Access from "@/components/parts/AcessArea.vue";
 import Contact from "@/components/parts/ContactArea.vue";
 import WorksPage from "@/components/parts/WorksPage.vue";
+import BusinessDetail from "@/components/parts/BusinessDetail.vue";
 
 export default {
   name: "MainContents",
@@ -33,7 +34,8 @@ export default {
     CompanyInfo,
     Access,
     Contact,
-    WorksPage
+    WorksPage,
+    BusinessDetail
   },
   created: function() {
     console.log(this.contents);
@@ -42,8 +44,7 @@ export default {
 </script>
 
 <style>
-.text {
-  margin: 10px;
-  text-align: justify;
+.contentsarea {
+  margin-bottom: 50px;
 }
 </style>

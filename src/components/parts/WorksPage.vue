@@ -1,18 +1,12 @@
 <template>
   <v-row>
-    <v-col
-      v-for="post in posts"
-      :key="post"
-      cols="12"
-      sm="6"
-      md="6"
-      lg="6"
-      xl="6"
-    >
+    <v-col v-for="post in posts" :key="post" cols="12" sm="6" md="6" lg="6" xl="6">
       <a :href="post.link">
         <img
           class="featuredmedia"
           :src="post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url"
+          v-motion-fade-visible-once
+          :delay="500"
         />
         <p class="postlink">
           <span class="date">{{ moment(post.date).format("YYYY/MM/DD") }}</span>
