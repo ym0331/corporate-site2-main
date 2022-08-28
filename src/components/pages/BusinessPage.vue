@@ -1,14 +1,19 @@
 <template>
+  <div>
     <ContentsArea :contents="contents"></ContentsArea>
+    <SlideArea></SlideArea>
+  </div>
 </template>
 
 <script>
 import ContentsArea from "@/components/templates/ContentsArea.vue";
+import SlideArea from "@/components/parts/SlideArea.vue";
 
 export default {
   name: "BusinessPage",
   components: {
-    ContentsArea
+    ContentsArea,
+    SlideArea
   },
   data() {
     return {

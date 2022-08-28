@@ -32,17 +32,18 @@
     <div>
       <v-container>
         <v-row>
+          
+          <v-col>
+            <img src="./img/logo.png" alt="ヨシザワ建設株式会社のロゴ" class="logo"/>
+            <p>〒160-0022 東京都新宿区新宿 6-28-7</p>
+            <p>03-1234-567</p>
+          </v-col>
+
           <v-col>
             <v-tab href="/business">事業内容</v-tab>
             <v-tab href="/works">施工事例</v-tab>
             <v-tab href="/company">会社情報</v-tab>
             <v-tab href="/contact">お問い合わせ</v-tab>
-          </v-col>
-
-          <v-col>
-            <img src="./img/logo.png" alt="ヨシザワ建設株式会社のロゴ" class="logo"/>
-            <p>〒160-0022 東京都新宿区新宿 6-28-7</p>
-            <p>03-1234-567</p>
           </v-col>
 
           <v-col cols="12" class="copyright">

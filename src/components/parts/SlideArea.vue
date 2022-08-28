@@ -1,60 +1,16 @@
 <template>
-  <!-- <v-row >
-    <v-col v-for="item in items" :key="item" class="slideshow d-flex child-flex">
-      <v-img :src="item" class="content"></v-img>
-    </v-col>
-  </v-row>-->
-
-  <!-- <div class="wrap">
-    <ul class="slideshow">
-        <li class="content">tomato</li>
-        <li class="content">orange</li>
-        <li class="content">blue</li>
-        <li class="content">green</li>
-    </ul>
-    <ul class="slideshow">
-        <li class="content">tomato</li>
-        <li class="content">orange</li>
-        <li class="content">blue</li>
-        <li class="content">green</li>
-    </ul>
-    <ul class="slideshow">
-        <li class="content">tomato</li>
-        <li class="content">orange</li>
-        <li class="content">blue</li>
-        <li class="content">green</li>
-    </ul>
-  </div>-->
-
-  <!-- <div class="slider d-flex">
-    <div v-for="item in items" :key="item" class="slider-wrap child-flex">
-      <div class="slide">
-        <v-img :src="item" class="content"></v-img>
-      </div>
-      <div class="slide">
-        <v-img :src="item" class="content"></v-img>
-      </div>
-            <div class="slide">
-        <v-img :src="item" class="content"></v-img>
-      </div>
-    </div>
-  </div> -->
-
-
-    <div class="wrap">
-    <ul class="slideshow" v-for="item in items" :key="item" >
-        <img :src="item" class="content">
-    </ul>
-    <ul class="slideshow" v-for="item in items" :key="item" >
-        <img :src="item" class="content">
-    </ul>
-    <ul class="slideshow" v-for="item in items" :key="item" >
-        <img :src="item" class="content">
-    </ul>
-  </div>
+  <ul class="slider">
+    <li v-for="item in items" :key="item">
+      <img :src="item" />
+    </li>
+  </ul>
 </template>
 
 <script>
+import $ from "jquery";
+import "slick-carousel";
+import "slick-carousel/slick/slick.css";
+
 export default {
   data() {
     return {
@@ -67,78 +23,52 @@ export default {
         "/img/constructionExample6.jpg"
       ]
     };
+  },
+  mounted: function() {
+    $(".slider").slick({
+      arrows: false, //左右の矢印はなし
+      autoplay: true, //自動的に動き出すか。初期値はfalse。
+      autoplaySpeed: 0, //自動的に動き出す待ち時間。初期値は3000ですが今回の見せ方では0
+      speed: 10000, //スライドのスピード。初期値は300。
+      infinite: true, //スライドをループさせるかどうか。初期値はtrue。
+      pauseOnHover: false, //オンマウスでスライドを一時停止させるかどうか。初期値はtrue。
+      pauseOnFocus: false, //フォーカスした際にスライドを一時停止させるかどうか。初期値はtrue。
+      cssEase: "linear", //動き方。初期値はeaseですが、スムースな動きで見せたいのでlinear
+      slidesToShow: 4, //スライドを画面に4枚見せる
+      slidesToScroll: 1, //1回のスライドで動かす要素数
+      responsive: [
+        {
+          breakpoint: 769, //モニターの横幅が769px以下の見せ方
+          settings: {
+            slidesToShow: 2 //スライドを画面に2枚見せる
+          }
+        },
+        {
+          breakpoint: 426, //モニターの横幅が426px以下の見せ方
+          settings: {
+            slidesToShow: 1.5 //スライドを画面に1.5枚見せる
+          }
+        }
+      ]
+    });
   }
 };
 </script>
 
 <style scoped>
 .slider {
-  width: 100%;
-  height: 30vh;
-  /* overflow: hidden; */
-  position: relative;
-}
-.slider-wrap {
-  animation: scroll 20s infinite linear 1s both;
-  width: calc(250px * 6);
-  height: 100%;
-}
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-250px * 3));
-  }
+  margin-bottom: 50px;
 }
 
-.slide-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.slide {
-  width: 250px;
-  height: 100%;
-  text-align: center;
+.slider img {
+  width: 100%; /*スライダー内の画像を横幅100%に*/
+  height: auto;
   padding: 0 10px;
 }
 
-.wrap {
-  display: flex;
-  align-items: center;
-  height: 340px;
-  overflow: hidden;
-}
-.slideshow {
-  display: flex;
-}
-.content {
-  width: 300px;
-  height: 300px;
-}
-.content:nth-child(1) {
-  background-color: tomato;
-}
-.content:nth-child(2) {
-  background-color: orange;
-}
-.content:nth-child(3) {
-  background-color: blue;
-}
-.content:nth-child(4) {
-  background-color: green;
-}
-.slideshow {
-  display: flex;
-  animation: loop-slide 20s infinite linear 1s both;
-}
-@keyframes loop-slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+
+.slider .slick-slide {
+  margin: 0 10px; /*スライド左右の余白調整*/
 }
 </style>

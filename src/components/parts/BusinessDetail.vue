@@ -29,17 +29,13 @@
       <v-img src="@/../public/img/business2.jpg"></v-img>
     </v-col>
   </v-row>
-        <SlideArea></SlideArea> 
+
 </div>
 </template>
 
 <script>
-import SlideArea from "@/components/parts/SlideArea.vue";
 export default {
-  name: "BusinessDetail",
-  components: {
-    SlideArea
-  }
+  name: "BusinessDetail"
 };
 </script>
 
