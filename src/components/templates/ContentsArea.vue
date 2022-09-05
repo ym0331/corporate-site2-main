@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div v-for="content in contents" :key="content" :id="content" class="contentsarea">
+    <v-container v-for="content in contents" :key="content" :id="content" class="contentsarea">
       <h2 v-motion-fade-visible-once :delay="500">
         <p class="is-big">{{ content.name2 }}</p>
         <p class="is-small">{{ content.name }}</p>
       </h2>
       <component :is="content.components"  v-motion-fade-visible-once :delay="500"></component>
-    </div>
+    </v-container>
   </div>
 </template>
 

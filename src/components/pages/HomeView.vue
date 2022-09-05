@@ -1,16 +1,19 @@
 <template>
   <main>
+    <MainVisual></MainVisual>
     <ContentsArea :contents="contents"></ContentsArea>
   </main>
 </template>
 
 <script>
 import ContentsArea from "@/components/templates/ContentsArea.vue";
+import MainVisual from "@/components/parts/MainVisual.vue";
 
 export default {
   name: "HomeView",
   components: {
     ContentsArea,
+    MainVisual
   },
   data() {
     return {
