@@ -1,32 +1,49 @@
 <template>
-  <div class="mainvisual">
-    <p class="mainvisualtext">
-      あなたの未来を
-      <br />作りたい
-    </p>
+  <div class="full">
+    <div class="img01"></div>
+    <div class="img02"></div>
+    <div class="img03"></div>
   </div>
 </template>
 
+<script>
+import $ from "jquery";
+import "slick-carousel";
+import "slick-carousel/slick/slick.css";
+
+export default {
+  mounted: function() {
+    $(".full").slick({
+      arrows: false,
+      dots: false,
+      autoplay: true,
+      autoplaySpeed: 1500,
+      speed: 1500,
+      fade: true,
+      pauseOnFocus: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false
+    });
+  }
+};
+</script>
+
 <style scoped>
-.mainvisual {
-  background: url("../../../public/img/mainvisual1.jpg");
+.full div {
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
   width: 100%;
   height: 88vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* writing-mode: vertical-rl;
-  vertical-align: baseline; */
+  margin: 0;
 }
-
-.mainvisualtext {
-  font-size: 3rem;
-  color: #fff;
-  font-weight: 600;
-  text-shadow: 2px 2px 2px rgb(53, 53, 53);
+.full div.img01 {
+  background-image: url("../../../public/img/mainvisual1.jpg");
+}
+.full div.img02 {
+  background-image: url("../../../public/img/mainvisual2.jpg");
+}
+.full div.img03 {
+  background-image: url("../../../public/img/mainvisual3.jpg");
 }
 </style>
-
-
