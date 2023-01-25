@@ -10,6 +10,8 @@ import VueAxios from 'vue-axios'
 
 loadFonts()
 
+axios.defaults.baseURL="https://firestore.googleapis.com/v1/projects/send-mail-7aad9/databases/(default)/documents"
+
 createApp(App)
   .use(router)
   .use(vuetify)

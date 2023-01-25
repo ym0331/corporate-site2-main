@@ -1,10 +1,10 @@
 <template>
   <div class="newsList">
   <div name="list" v-for="post in posts.slice(0,3)" :key="post" class="newsListLink">
-        <a :href="post.link">
+        <!-- <a :href="post.link"> -->
           <span class="date">{{ moment(post.date).format("YYYY/MM/DD") }}</span>
           <p>{{ post.title.rendered }}</p>
-        </a>
+        <!-- </a> -->
     </div>
     </div>
 </template>
@@ -39,6 +39,7 @@ export default {
   border-bottom: 1px solid #b9b9b9;
   box-sizing: border-box;
   text-align: justify;
+  display: flex;
 }
 
 .date {
@@ -50,7 +51,7 @@ export default {
 a {
   color: #2c3e50;
   text-decoration: none;
-  display: flex;
+
 }
 
 a:hover {
